@@ -179,6 +179,11 @@ public class Logic1
     /// </summary>
     public bool In1To10(int n, bool outsideMode)
     {
+
+        if (outsideMode && (n is <= 1 || n is >= 10)) return true;
+
+        if (n is 1 || n is 2 || n is 3 || n is 4 || n is 5 || n is 6 || n is 7 || n is 8 || n is 9 || n is 10) return true;
+               
         return false;
     }
 
