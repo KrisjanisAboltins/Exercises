@@ -19,7 +19,11 @@ public class Logic1
     /// </summary>
     public bool CigarParty(int cigars, bool isWeekend)
     {
-        throw new NotImplementedException();
+        //true if the party with the given values is successful >=40 && vai nu <=60 vai nu weekends, or false otherwise
+
+        if (cigars >= 40 && (cigars <= 60 || isWeekend)) return true; 
+        
+        return false;
     }
 
     /// <summary>
@@ -36,7 +40,14 @@ public class Logic1
     /// </summary>
     public int DateFashion(int you, int date)
     {
-        throw new NotImplementedException();
+        // int you <=2 || int date <=2 return 0 (no)
+        // int you >=8 || int date >=8 return 2 (yes)
+        // otherwise 1 maybe
+
+        if (you <= 2 || date <= 2) return 0;
+        if (you >= 8 || date >= 8) return 2;
+                      
+        return 1;
     }
 
     /// <summary>
@@ -51,7 +62,22 @@ public class Logic1
     /// </summary>
     public bool SquirrelPlay(int temp, bool isSummer)
     {
-        throw new NotImplementedException();
+        // if int temp < 60 return false
+        // if int temp <= 90 return true
+        // if int temp <=100 && if isSummer return true
+        //false otherwise
+
+        if (temp < 60) return false;
+        if (temp <= 90) return true;
+        if (temp <=100 && isSummer) return true;
+
+        // V2
+        // if (temp < 60) return false;
+        // int maxTemp = 90;
+        // if (isSummer) maxTemp += 10;
+        // if (temp <= maxTemp) return true;
+
+        return false;
     }
 
     /// <summary>
@@ -67,7 +93,15 @@ public class Logic1
     /// </summary>
     public int CaughtSpeeding(int speed, bool isBirthday)
     {
-        throw new NotImplementedException();
+       
+        int maxSpeed1 = 61;
+        if (isBirthday) maxSpeed1 += 5;
+        int maxSpeed2 = 81;
+        if (isBirthday) maxSpeed2 += 5;
+        if (speed >= maxSpeed1 && speed < maxSpeed2) return 1;
+        if (speed > maxSpeed2) return 2;
+
+        return 0;
     }
 
     /// <summary>
@@ -80,7 +114,11 @@ public class Logic1
     /// </summary>
     public int SortaSum(int a, int b)
     {
-        throw new NotImplementedException();
+        int sum1 = a + b;
+        // if (sum1 < 10) return sum1;
+        if (sum1 >= 10 && sum1 <= 19) return 20;
+        
+        return sum1;
     }
 
     /// <summary>
@@ -96,7 +134,18 @@ public class Logic1
     /// </summary>
     public string AlarmClock(int day, bool vacation)
     {
-        throw new NotImplementedException();
+        // 0 = Sun, 1 = Mon, 2 = Tue, ...6 = Sat
+        // Weekdays, the alarm should be "7:00"
+        // Weekend it should be "10:00"
+        // vacation sould be "10:00" and weekends it should be "off"
+                
+
+        if ((day is 0 || day is 6) && vacation) return "off";
+        if (day is 0 || day is 6) return "10:00";
+
+        if ((day is 1 || day is 2 || day is 3 || day is 4 || day is 5) && vacation) return "10:00";
+
+        return "7:00";
     }
 
     /// <summary>
@@ -110,7 +159,13 @@ public class Logic1
     /// </summary>
     public bool Love6(int a, int b)
     {
-        throw new NotImplementedException();
+        int numberSum = a + b;
+        int numberDifference = a - b;
+        int AbsolutenumberDifference = Math.Abs(numberDifference);
+
+        if (a is 6 || b is 6 || numberSum is 6 || AbsolutenumberDifference is 6) return true;
+
+        return false;
     }
 
     /// <summary>
@@ -124,7 +179,7 @@ public class Logic1
     /// </summary>
     public bool In1To10(int n, bool outsideMode)
     {
-        throw new NotImplementedException();
+        return false;
     }
 
     /// <summary>
