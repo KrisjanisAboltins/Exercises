@@ -201,14 +201,10 @@ public class Logic1
     /// </summary>
     public bool SpecialEleven(int n)
     {
-        int n11 = 11;
-        int n11Plus1 = n11 ++;
 
-        int result = n * 11;
-        int result2 = n * 11 + 1;
+        int n11Plus1 = 1 - n;
 
-        //if it is a multiple of 11 or if it is one more than a multiple of 11
-        if ((n % 11) == 0) return true;
+        if (((n % 11) == 0) || ((n11Plus1 % 11) == 0)) return true;
         
         return false;
     }
@@ -223,7 +219,10 @@ public class Logic1
     /// </summary>
     public bool More20(int n)
     {
-        if (n % 20 == 0) return true;
+        int n1 = n - 1;
+        int n2 = n - 2;
+
+        if ((n1 % 20 == 0) || (n2 % 20 == 0)) return true;
         
         return false;
     }
@@ -238,7 +237,13 @@ public class Logic1
     /// </summary>
     public bool Old35(int n)
     {
-        throw new NotImplementedException();
+        int int3 = n % 3;
+        int int5 = n % 5;
+
+        if ((int3 == 0) && (int5 != 0)) return true;
+        if((int3 != 0) && (int5 == 0)) return true;
+
+        return false;
     }
 
     /// <summary>
@@ -272,9 +277,12 @@ public class Logic1
     /// </summary>
     public bool NearTen(int num)
     {
+        // true if num is 2 of a multiple of 10
 
-
-
+        int num2 = num % 10;
+        
+        if (num2 <= 2 ) return true;
+        
         return false;
     }
 
@@ -288,14 +296,15 @@ public class Logic1
     /// </summary>
     public int TeenSum(int a, int b)
     {
-        int result = a + b;
+        int sum = a + b;
+
+        //values in range 13..19  are extra lucky, return 19
         int extraLuck = 19;
 
-        if (a >= 13 && a <= 19) ; return 19;
+        if (((a is >= 13) && (a is <= 19)) || ((b is >= 13) && (b is <= 19))) return extraLuck;
 
-        if (b >= 13 && b <= 19) ; return 19;
+        return sum;
 
-        return result;
     }
 
     /// <summary>
