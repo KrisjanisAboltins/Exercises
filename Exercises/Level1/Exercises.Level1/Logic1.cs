@@ -576,7 +576,15 @@ public class Logic1
     /// </summary>
     public bool ShareDigit(int a, int b)
     {
-        throw new NotImplementedException();
+        int ashareDigitRight = a % (10);
+        int bshareDigitRight = b % (10);
+        int ashareDigitLeft = a / (10);
+        int bshareDigitLeft = b / (10);
+
+        if ((ashareDigitRight == bshareDigitRight) || (ashareDigitRight == bshareDigitLeft)) return true;
+        if((ashareDigitLeft == bshareDigitRight) || (ashareDigitLeft == bshareDigitLeft)) return true;
+
+        return false;
     }
 
     /// <summary>
@@ -591,7 +599,19 @@ public class Logic1
     /// </summary>
     public int SumLimit(int a, int b)
     {
-        throw new NotImplementedException();
+        // 2 non-negative ints
+        // If the sum has more digits than a, just return a without b.
+        string aText = (a.ToString());
+        int sumNumber = a + b;
+        string sumText = (sumNumber.ToString());
+
+        // int length = stringName.Length
+
+
+
+
+
+        return (a + b);
     }
 }
 
