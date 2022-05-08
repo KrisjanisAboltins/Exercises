@@ -180,10 +180,14 @@ public class Logic1
     public bool In1To10(int n, bool outsideMode)
     {
 
-        if (outsideMode && (n is <= 1 || n is >= 10)) return true;
-
-        if (n >= 1 && n <= 10) return true;             
-
+        ////true if n is in the range 1..10, inclusive
+        if (n >= 1 && n <= 10) return true;
+        
+        // outsideMode is true; if the number is less or equal to 1, or greater or equal to 10
+        if (outsideMode && (n <= 1)) return true;
+        
+        if (outsideMode && (n >= 10)) return true;
+       
         return false;
     }
 
@@ -248,7 +252,13 @@ public class Logic1
     /// </summary>
     public bool Less20(int n)
     {
-        throw new NotImplementedException();
+        int nDivide1 = (n + 1) % 20;
+        int nDivide2 = (n + 2) % 20;
+
+        // 1 or 2 less than a multiple of 20 e.g. 38 and 39 return true, but 40 returns false
+        if ((nDivide1 == 0) || (nDivide2 == 0)) return true;
+        
+        return false;
     }
 
     /// <summary>
