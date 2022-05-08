@@ -143,7 +143,7 @@ public class Logic1
         if ((day is 0 || day is 6) && vacation) return "off";
         if (day is 0 || day is 6) return "10:00";
 
-        if ((day is 1 || day is 2 || day is 3 || day is 4 || day is 5) && vacation) return "10:00";
+        if ((day >= 1 && day <= 5) && vacation) return "10:00";
 
         return "7:00";
     }
@@ -182,7 +182,7 @@ public class Logic1
 
         if (outsideMode && (n is <= 1 || n is >= 10)) return true;
 
-        if (n is 1 || n is 2 || n is 3 || n is 4 || n is 5 || n is 6 || n is 7 || n is 8 || n is 9 || n is 10) return true;             
+        if (n >= 1 && n <= 10) return true;             
 
         return false;
     }
@@ -197,6 +197,8 @@ public class Logic1
     /// </summary>
     public bool SpecialEleven(int n)
     {
+        
+        
         throw new NotImplementedException();
     }
 
