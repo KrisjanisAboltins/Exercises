@@ -365,13 +365,15 @@ public class Logic1
     public string FizzString(string str)
     {
         // string starts with "f" return "Fizz"
-                
-
+        bool fStarts = str.StartsWith("f");
+              
         // string ends with "b" return "Buzz"
-
+        bool bEnds = str.EndsWith("b");
 
         // both the "f" and "b" conditions are true, return "FizzBuzz"
-
+        if (fStarts && bEnds) return "FizzBuzz";
+        if (fStarts) return "Fizz";
+        if (bEnds) return "Buzz";
 
         return str;
     }
@@ -391,6 +393,7 @@ public class Logic1
     {
        
         
+
         throw new NotImplementedException();
     }
 
