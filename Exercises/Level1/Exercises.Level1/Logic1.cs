@@ -606,10 +606,10 @@ public class Logic1
         string sumText = (sumNumber.ToString());
 
         // int length = stringName.Length
+        int aTextLength = aText.Length;
+        int sumTextLength = sumText.Length;
 
-
-
-
+        if (sumTextLength > aTextLength) return a;
 
         return (a + b);
     }
