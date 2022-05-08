@@ -533,7 +533,10 @@ public class Logic1
     /// </summary>
     public int GreenTicket(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        if ((a == b) && (b == c)) return 20;
+        if ((a == b) || (b == c) || (a == c)) return 10;
+
+        return 0;
     }
 
     /// <summary>
@@ -548,7 +551,18 @@ public class Logic1
     /// </summary>
     public int BlueTicket(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        // ab, bc, and ac
+        int ab = a + b;
+        int bc = b + c;
+        int ac = a + c;
+
+        // If any pair sums to exactly 10, the result is 10
+        if ((ab == 10) || (ac == 10) || (ac == 10)) return 10;
+
+        // if the ab sum is exactly 10 more than either bc or ac sums the result is 5
+        if (( ab == (10 + bc)) || (ab == (10 + ac))) return 5;
+
+        return 0;
     }
 
     /// <summary>
