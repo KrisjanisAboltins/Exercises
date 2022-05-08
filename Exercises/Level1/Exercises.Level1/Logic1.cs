@@ -391,21 +391,21 @@ public class Logic1
     /// </summary>
     public string FizzString2(int n)
     {
-        // if the number is divisible by 3 use "Fizz" instead of the number
+      
         int n3 = n % 3;
         int n5 = n % 5;
 
-        
-        if (n3 == 0) return "Fizz";
-        if (n5 == 0) return "Buzz";
-
-
-        // number is divisible by 5 use "Buzz"
-        
         // divisible by both 3 and 5, use "FizzBuzz"
+        if ((n3 == 0) && (n5 == 0)) return "FizzBuzz";
+
+        // if the number is divisible by 3 use "Fizz" instead of the number
+        // number is divisible by 5 use "Buzz"
 
         // return the string form of the number followed by "!"
-        return (n + "!");
+        string nText = Convert.ToString(n);
+        return (nText + "!");
+         
+
     }
 
     /// <summary>
