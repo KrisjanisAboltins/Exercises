@@ -197,9 +197,16 @@ public class Logic1
     /// </summary>
     public bool SpecialEleven(int n)
     {
+        int n11 = 11;
+        int n11Plus1 = n11 ++;
+
+        int result = n * 11;
+        int result2 = n * 11 + 1;
+
+        //if it is a multiple of 11 or if it is one more than a multiple of 11
+        if ((n % 11) == 0) return true;
         
-        
-        throw new NotImplementedException();
+        return false;
     }
 
     /// <summary>
@@ -212,7 +219,9 @@ public class Logic1
     /// </summary>
     public bool More20(int n)
     {
-        throw new NotImplementedException();
+        if (n % 20 == 0) return true;
+        
+        return false;
     }
 
     /// <summary>
@@ -253,7 +262,10 @@ public class Logic1
     /// </summary>
     public bool NearTen(int num)
     {
-        throw new NotImplementedException();
+
+
+
+        return false;
     }
 
     /// <summary>
@@ -266,7 +278,14 @@ public class Logic1
     /// </summary>
     public int TeenSum(int a, int b)
     {
-        throw new NotImplementedException();
+        int result = a + b;
+        int extraLuck = 19;
+
+        if (a >= 13 && a <= 19) ; return 19;
+
+        if (b >= 13 && b <= 19) ; return 19;
+
+        return result;
     }
 
     /// <summary>
@@ -280,7 +299,12 @@ public class Logic1
     /// </summary>
     public bool AnswerCell(bool isMorning, bool isMom, bool isAsleep)
     {
-        throw new NotImplementedException();
+        if (isAsleep) return false;
+
+        if (isMorning && isMom) return true;
+        else if (isMorning) return false;
+
+        return true;
     }
 
     /// <summary>
@@ -296,7 +320,18 @@ public class Logic1
     /// </summary>
     public int TeaParty(int tea, int candy)
     {
-        throw new NotImplementedException();
+        //  0=bad, 1=good, or 2=great
+        // good (1) if both tea and candy are at >=5
+
+        // all cases, if either tea or candy is less than 5, the party is (0)
+        if (tea <5 || candy <5) return 0;
+
+        // if either tea or candy is at least double the amount of the other one is great (2)
+        
+        if ((tea >= candy * 2) || (candy >= tea * 2)) return 2;
+        
+        return 1;
+               
     }
 
     /// <summary>
@@ -310,7 +345,16 @@ public class Logic1
     /// </summary>
     public string FizzString(string str)
     {
-        throw new NotImplementedException();
+        // string starts with "f" return "Fizz"
+                
+
+        // string ends with "b" return "Buzz"
+
+
+        // both the "f" and "b" conditions are true, return "FizzBuzz"
+
+
+        return str;
     }
 
     /// <summary>
@@ -326,6 +370,8 @@ public class Logic1
     /// </summary>
     public string FizzString2(int n)
     {
+       
+        
         throw new NotImplementedException();
     }
 
@@ -338,7 +384,9 @@ public class Logic1
     /// </summary>
     public bool TwoAsOne(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        if (a == (b + c) || b == (c + a) || c == (a + b)) return true;
+        
+        return false;
     }
 
     /// <summary>
@@ -351,11 +399,14 @@ public class Logic1
     /// </summary>
     public bool InOrder(int a, int b, int c, bool bOk)
     {
-        throw new NotImplementedException();
+        if (bOk && (c > b)) return true;
+        if ((b > a) && (c > b)) return true;
+        
+        return false;
     }
 
     /// <summary>
-    /// iven three ints, a b c, return true if they are in strict increasing order, such as 2 5 11, or
+    /// Given three ints, a b c, return true if they are in strict increasing order, such as 2 5 11, or
     /// 5 6 7, but not 6 5 7 or 5 5 7. However, with the exception that if "equalOk" is true,
     /// equality is allowed, such as 5 5 7 or 5 5 5.
     /// 
@@ -365,7 +416,10 @@ public class Logic1
     /// </summary>
     public bool InOrderEqual(int a, int b, int c, bool bOk)
     {
-        throw new NotImplementedException();
+        if (bOk && (b >= a) && (c >= b)) return true;
+        if ((b > a) && (c > b)) return true;
+        
+        return false;
     }
 
     /// <summary>
@@ -379,7 +433,13 @@ public class Logic1
     /// </summary>
     public bool LastDigit(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        int aLastDigit = a % (10);
+        int bLastDigit = b % (10);
+        int cLastDigit = c % (10);
+
+        if ((aLastDigit == bLastDigit) || (aLastDigit == cLastDigit) || (bLastDigit == cLastDigit)) return true;
+        
+        return false;
     }
 
     /// <summary>
@@ -392,7 +452,15 @@ public class Logic1
     /// </summary>
     public bool LessBy10(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        int aLessOne = a - 10;
+        int bLessOne = b - 10;
+        int cLessOne = c - 10;
+
+        if ((a <= bLessOne) || (a <= cLessOne)) return true;
+        if ((b <= aLessOne) || (b <= cLessOne)) return true;
+        if ((c <= aLessOne) || (c <= bLessOne)) return true;
+
+        return false;
     }
 
     /// <summary>
@@ -406,7 +474,16 @@ public class Logic1
     /// </summary>
     public int WithoutDoubles(int die1, int die2, bool noDoubles)
     {
-        throw new NotImplementedException();
+        // if noDoubles  if the two dice show the same value 
+        // increment one die to the next value 1 if its value was 6
+
+        if (noDoubles && (die1 == die2)) return (1 + die2 + die2);
+
+        else if (noDoubles && ((die1 == die2) && ((die1 + die2) == 6))) return (1 + die2 + die2);
+
+        else if (noDoubles && (die1 == die2)) return (1 + die2);
+                                          
+        return (die1 + die2);
     }
 
     /// <summary>
@@ -421,6 +498,8 @@ public class Logic1
     /// </summary>
     public int MaxMod5(int a, int b)
     {
+        
+        
         throw new NotImplementedException();
     }
 
@@ -436,7 +515,11 @@ public class Logic1
     /// </summary>
     public int RedTicket(int a, int b, int c)
     {
-        throw new NotImplementedException();
+        if ((a == 2) && (b == 2) && (c == 2)) return 10;
+        else if ((a == b) && (b == c)) return 5;
+        else if ((b != a) && (c!= a)) return 1;
+
+        return 0;
     }
 
     /// <summary>
