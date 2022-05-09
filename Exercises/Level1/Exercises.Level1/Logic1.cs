@@ -277,11 +277,14 @@ public class Logic1
     /// </summary>
     public bool NearTen(int num)
     {
-        // true if num is 2 of a multiple of 10
+        // true if num is within 2 of a multiple of 10
 
-        int num2 = num % 10;
-        
-        if (num2 <= 2 ) return true;
+        int num1 = (num -1) % 10;
+        int num2 = (num -2) % 10;
+        int num3 = (num +1) % 10;
+        int num4 = (num +2) % 10;
+                
+        if ((num %10 ==0) || (num1 == 0) || (num2 ==0) || (num3 ==0) || (num4 == 0)) return true;
         
         return false;
     }
