@@ -396,16 +396,17 @@ public class Logic1
         int n5 = n % 5;
 
         // divisible by both 3 and 5, use "FizzBuzz"
-        if ((n3 == 0) && (n5 == 0)) return "FizzBuzz";
+        if ((n3 == 0) && (n5 == 0)) return ($"FizzBuzz" + "!");
 
         // if the number is divisible by 3 use "Fizz" instead of the number
+        else if (n3 == 0) return ($"Fizz" + "!");
         // number is divisible by 5 use "Buzz"
+        else if (n5 == 0) return ($"Buzz" + "!");
 
         // return the string form of the number followed by "!"
         string nText = Convert.ToString(n);
         return (nText + "!");
          
-
     }
 
     /// <summary>
