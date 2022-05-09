@@ -179,15 +179,9 @@ public class Logic1
     /// </summary>
     public bool In1To10(int n, bool outsideMode)
     {
+        if ((outsideMode == false) && ((n == 1) || (n == 2) || (n == 3) || (n == 4) || (n == 5) || (n == 6) || (n == 7) || (n == 8) || (n == 9) || (n == 10))) return true;
+        if ((outsideMode) && ((n <=1) || (n >=10))) return true;
 
-        ////true if n is in the range 1..10, inclusive
-        if (n >= 1 && n <= 10) return true;
-        
-        // outsideMode is true; if the number is less or equal to 1, or greater or equal to 10
-        if (outsideMode && (n <= 1)) return true;
-        
-        if (outsideMode && (n >= 10)) return true;
-       
         return false;
     }
 
@@ -285,7 +279,7 @@ public class Logic1
         int num4 = (num +2) % 10;
                 
         if ((num %10 ==0) || (num1 == 0) || (num2 ==0) || (num3 ==0) || (num4 == 0)) return true;
-        
+                
         return false;
     }
 
