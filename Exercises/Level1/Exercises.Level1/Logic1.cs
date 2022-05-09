@@ -508,15 +508,14 @@ public class Logic1
     /// </summary>
     public int WithoutDoubles(int die1, int die2, bool noDoubles)
     {
-        // if noDoubles  if the two dice show the same value 
-        // increment one die to the next value 1 if its value was 6
+        
+        // Return the sum of two 6-sided dice rolls, each in the range 1..6
+        // if noDoubles is , if the two dice show the same value, , increment one die to the next value 
+        // wrapping around to 1 if its value was 6
 
-        if (noDoubles && (die1 == die2)) return (1 + die2 + die2);
-
-        else if (noDoubles && ((die1 == die2) && ((die1 + die2) == 6))) return (1 + die2 + die2);
-
-        else if (noDoubles && (die1 == die2)) return (1 + die2);
-                                          
+        if ((noDoubles) && (die1 == die2) && (die1 == 6) && (die2 == 6)) return (die2 + 1);
+        if ((noDoubles) && (die1 == die2)) return (die1 + die2 + 1);
+        
         return (die1 + die2);
     }
 
@@ -533,8 +532,19 @@ public class Logic1
     public int MaxMod5(int a, int b)
     {
         
+        int maxValue = Math.Max(a, b);
+
+        // in all cases if the two values are the same, return 0
+        if (a == b) return 0;
         
-        throw new NotImplementedException();
+        // if the two values have the same remainder when divided by 5 then the return the smaller value
+        int aRemainder = a % 5;
+        int bRemainder = b % 5;
+        int minValue = Math.Min(a, b);
+        if (aRemainder == bRemainder) return minValue;
+                
+        // return whichever value is larger
+        return maxValue;
     }
 
     /// <summary>
