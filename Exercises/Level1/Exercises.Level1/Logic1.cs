@@ -24,6 +24,9 @@ public class Logic1
         if (cigars >= 40 && (cigars <= 60 || isWeekend)) return true; 
         
         return false;
+
+        /// vai arī piem., tikai : return (cigars >= 40 && (cigars <= 60 || isWeekend))
+
     }
 
     /// <summary>

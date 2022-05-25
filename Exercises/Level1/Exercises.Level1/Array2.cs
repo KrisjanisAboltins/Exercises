@@ -17,7 +17,9 @@ public class Array2
     /// </summary>
     public int CountEvens(int[] nums)
     {
-        throw new NotImplementedException();
+                
+         throw new NotImplementedException();
+
     }
 
     /// <summary>
@@ -31,6 +33,9 @@ public class Array2
     /// </summary>
     public int BigDiff(int[] nums)
     {
+        
+
+
         throw new NotImplementedException();
     }
 
@@ -61,7 +66,32 @@ public class Array2
     /// </summary>
     public int Sum13(int[] nums)
     {
-        throw new NotImplementedException();
+        // returning 0 for an empty array
+        if (nums.Length == 0) return 0;
+        int sum = 0;
+
+        // ja nav 13 
+        for (int i = 0; i < nums.Length; i++)
+            // ja nav 13 
+            if (nums[i] != 13)
+            {
+                sum += nums[i];
+            }
+        // ja ir 13
+            else if (nums[i] == 13)
+            {
+                nums[i] = 0;
+                // num pēc 13 neskaitās bet jāiekļaujās robežas
+                if (i + 1 < nums.Length) 
+                {
+                    nums[i + 1] = 0;
+                }
+
+            }
+       
+        // Return the sum of the numbers in the array
+        return sum;
+
     }
 
     /// <summary>
@@ -75,9 +105,11 @@ public class Array2
     /// </summary>
     public int Sum67(int[] nums)
     {
+        
         throw new NotImplementedException();
     }
-
+    
+      
     /// <summary>
     /// Given an array of ints, return true if the array contains a 2 next to a 2 somewhere.
     /// 
@@ -99,7 +131,16 @@ public class Array2
     /// </summary>
     public bool Lucky13(int[] nums)
     {
-        throw new NotImplementedException();
+
+        for (int i = 0; i < nums.Length; i++)
+            
+        {
+            if (nums[i] == 1 || nums[i] == 3)
+            return false;
+        }
+                   
+        return true;
+
     }
 
     /// <summary>
