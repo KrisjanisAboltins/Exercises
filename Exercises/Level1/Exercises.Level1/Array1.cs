@@ -19,6 +19,7 @@ public class Array1
     /// </summary>
     public bool FirstLast6(int[] nums)
     {
+        
         // izgūstam 1mo skaitli masīvā
 
         int first = nums[0];
