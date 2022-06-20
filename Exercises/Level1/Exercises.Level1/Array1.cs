@@ -105,7 +105,7 @@ public class Array1
     /// </summary>
     
     
-        // piedefinējam mainīgo kurā glabāsim summas vērtību
+        
         
         // Izmantojot ciklu ejam cauri katram masīva elementam un pieskaitam summai
         //if (nums.Length == 0) return false;
@@ -114,7 +114,10 @@ public class Array1
 
         public int Sum3(int[] nums)
         {
+        // piedefinējam mainīgo kurā glabāsim summas vērtību
             int sum = 0;
+
+        // Izmantojot ciklu ejam cauri katram masīva elementam un pieskaitam summai
             for (int i = 0; i < nums.Length; i++)
             {
                 sum += nums[i];
@@ -148,9 +151,7 @@ public class Array1
 
         return result;
 
-
-        // iespēja 2
-        // *** 2. Atrisinīet šo ar ciklu tādā veidā, ka nebūtu nozīme cik elementi ir masīvā
+               
                 
     }
 
@@ -190,11 +191,11 @@ public class Array1
 
         //set all the other elements to be that value.
 
-        int[] intME3 = { maxNums, maxNums, maxNums };
+        int[] intEnd3 = { maxNums, maxNums, maxNums };
               
 
         //Return the changed array
-        return intME3;
+        return intEnd3;
 
     }
 
@@ -209,16 +210,9 @@ public class Array1
     /// </summary>
     public int Sum2(int[] nums)
     {
-        int sum2 = nums[0] + nums[1];
 
-        if (nums.Length == 0) return 0;
-        if (nums.Length == 1) return nums[1];
-
-        /// length is less than 2, just sum up the elements that exist
-        if (nums.Length == 1) return nums[1];
-
-        //return the sum of the first 2 elements in the array
-        return sum2;
+        
+        throw new NotImplementedException();
     }
 
     /// <summary>
@@ -304,12 +298,7 @@ public class Array1
     /// </summary>
     public int[] MakeLast(int[] nums)
     {
-       int lastML = nums[nums.Length - 1];
-
-       int[] intML = { 0, lastML };
-
-        //  new array with double the length
-        // last element is the same as the original array, and all the other elements are 0
+       
 
         throw new NotImplementedException();
     }
@@ -324,7 +313,10 @@ public class Array1
     /// </summary>
     public bool Double23(int[] nums)
     {
+        
+
         throw new NotImplementedException();
+
     }
 
     /// <summary>
@@ -337,8 +329,9 @@ public class Array1
     /// </summary>
     public int[] Fix23(int[] nums)
     {
-        
-        
+
+                  
+
         throw new NotImplementedException();
     }
 
@@ -484,7 +477,10 @@ public class Array1
     /// </summary>
     public int[] Front11(int[] a, int[] b)
     {
+
         throw new NotImplementedException();
+
+
     }
 
 }
